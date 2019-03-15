@@ -3,7 +3,7 @@ services:
   - docker
   
 before_install:
-  - docker build -t allotsys/docker-react -f Dockerfile.dev .
+  - docker build -t balazsszilardtoth/docker-react -f Dockerfile.dev .
   
 script:
-  - docker run allotsys/docker-react npm run test --env=jsdom -- --coverage
+  - docker run balazsszilardtoth/docker-react npm run test -- --coverage
