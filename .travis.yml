@@ -3,15 +3,15 @@ services:
   - docker
   
 before_install:
-  - docker build -t allmyles/udemy-docker-react -f Dockerfile.dev .
+  - docker build -t allmyles/docker-react -f Dockerfile.dev .
   
 script:
-  - docker run allmyles/udemy-docker-react npm run test -- --coverage
+  - docker run allmyles/docker-react npm run test -- --coverage
   
 deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
-  name: "udemy-docker-react"
+  app: "udemy-docker-react"
   env: "UdemyDockerReact-env"
   bucket_name: "elasticbeanstalk-eu-central-1-202086208544"
   bucket_path: "udemy-docker-react"
